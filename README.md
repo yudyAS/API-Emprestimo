@@ -8,7 +8,6 @@ Esta é uma API para simulação de empréstimos, permitindo que um usuário env
 - Spring Data JPA
 - Hibernate
 - MySQL
-- Swagger (OpenAPI)
 - Postman (para testes)
 
 ---
@@ -126,15 +125,6 @@ A API utiliza um modelo relacional para armazenar os dados:
 }
 ```
 3. Clique em **Send** e veja a resposta JSON.
-
----
-
-## Documentação com Swagger
-
-A API possui documentação interativa gerada pelo Swagger. Para acessar:
-```
-http://localhost:8081/swagger-ui/index.html
-```
 
 ---
 
