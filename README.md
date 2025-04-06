@@ -35,13 +35,20 @@ spring.jpa.show-sql=true
 mvn clean install
 mvn spring-boot:run
 ```
-A API rodará em: `http://localhost:8081`
+A API rodará em: `http://localhost:8080`
 
 ---
 
 ## Endpoints Disponíveis
-
-### **1. Simular um empréstimo**
+### **1. Adicionar novo cliente**
+#### **POST `/api/clientes`**
+![Image](https://github.com/user-attachments/assets/da9fc278-dd1a-4577-9eb7-a845ee8e098c)
+---
+### **Listar todos os clientes**
+#### **GET `/api/clientes`**
+![Image](https://github.com/user-attachments/assets/7ec57236-3dbb-45a1-86ec-042048bddab9)
+---
+### **2. Simular um empréstimo**
 #### **POST `/api/v1/simulacoes/emprestimos`**
 
 #### **Request Body (JSON)**
@@ -66,6 +73,8 @@ A API rodará em: `http://localhost:8081`
   "valorParcelaMensal": 259.58
 }
 ```
+![Image](https://github.com/user-attachments/assets/552f5a2e-d206-42dc-a14b-6e3a068e687b)
+---
 
 **Empréstimo Reprovado (Score Baixo):**
 ```json
@@ -74,6 +83,8 @@ A API rodará em: `http://localhost:8081`
   "motivo": "Seu score está abaixo do mínimo necessário para solicitar um empréstimo."
 }
 ```
+![Image](https://github.com/user-attachments/assets/755a9167-2f19-44af-a243-59b3cc3463e1)
+---
 
 **Empréstimo Reprovado (Valor Excedente):**
 ```json
@@ -82,9 +93,26 @@ A API rodará em: `http://localhost:8081`
   "motivo": "Valor solicitado excede o limite permitido."
 }
 ```
+![Image](https://github.com/user-attachments/assets/c6cbc2ef-f32d-46b9-9c02-ccedfbcd2fe1)
+---
+### **Regras**
+- O nome tem que ter entre 15 e 50 caracteres
+- Score não pode ser menor que 1 e maior que 1000
+#### Ilustração do erro que sera mostrado
+![Image](https://github.com/user-attachments/assets/629e68a1-0d0e-4d98-9c11-bb5ca480a8de)
+---
+### **3. Listar todos os empréstimos**
+#### **GET `/api/v1/simulacoes/emprestimos`**
 
-Todos os pedidos de empréstimos são armazenados no banco, mesmo os reprovados.
+![Image](https://github.com/user-attachments/assets/64dde23d-9d18-4993-a0ca-b1e8212e7c07)
 
+
+
+### Todos os pedidos de empréstimos são armazenados no banco, mesmo os reprovados.
+
+---
+![Image](https://github.com/user-attachments/assets/2a2cea46-20d1-4d0c-8d13-a550e425b48d)
+![Image](https://github.com/user-attachments/assets/3dc698e1-df5d-413f-94aa-d4c981cac0e8)
 ---
 
 ## Modelo do Banco de Dados
@@ -110,21 +138,7 @@ A API utiliza um modelo relacional para armazenar os dados:
 | valorParcelaMensal   | Double | Valor estimado da parcela mensal   |
 | cliente_id           | Long   | Referência ao cliente associado   |
 
----
 
-## Testando com Postman
-
-1. Abra o Postman e crie uma nova requisição **POST** para `http://localhost:8081/api/v1/simulacoes/emprestimos`
-2. No corpo da requisição (**Body - raw - JSON**), insira:
-```json
-{
-  "nomeCompleto": "Maria Souza",
-  "valorCreditoSolicitado": 6000.0,
-  "score": 280,
-  "rendaMensal": 2500.0
-}
-```
-3. Clique em **Send** e veja a resposta JSON.
 
 ---
 
