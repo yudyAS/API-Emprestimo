@@ -7,7 +7,6 @@ Esta é uma API para simulação de empréstimos, permitindo que um usuário env
 - Spring Boot 3.4.3
 - Spring Data JPA
 - Hibernate
-- MySQL
 - Postman (para testes)
 
 ---
