@@ -8,7 +8,6 @@ Esta é uma API para simulação de empréstimos, permitindo que um usuário env
 - Spring Data JPA
 - Hibernate
 - Postman (para testes)
-
 ---
 
 ## Instalação e Execução
@@ -19,14 +18,21 @@ git clone https://github.com/seu-repositorio.git
 cd sua-api-emprestimos
 ```
 
-### **2. Configurar o banco de dados**
-Certifique-se de ter um banco MySQL rodando. No arquivo `application.properties` ou `application.yml`, configure as credenciais:
+### **2. Configuração do Banco de Dados H2**
+O banco de dados H2 é configurado automaticamente com o Spring Boot. Para acessar a interface do banco de dados:
+#### - Execute o projeto.
+
+
+#### - Acesse a URL: http://localhost:8080/h2-console.
+
+
+#### - Use as seguintes credenciais de conexão:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/emprestimos_db
-spring.datasource.username=root
-spring.datasource.password=senha
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+JDBC URL: jdbc:h2:mem:testdb
+
+User: sa
+
+Password: (deixe em branco)
 ```
 
 ### **3. Compilar e executar**
