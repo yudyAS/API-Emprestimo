@@ -43,6 +43,9 @@ mvn spring-boot:run
 A API rodará em: `http://localhost:8080`
 
 ---
+### Desenho da Aplicação 
+![Image](https://github.com/user-attachments/assets/328468ff-74e0-47c4-bfdf-6d0e92a0ab39)
+---
 
 ## Endpoints Disponíveis
 ### **1. Adicionar novo cliente**
