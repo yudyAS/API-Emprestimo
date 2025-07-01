@@ -1,9 +1,16 @@
 # language: pt
 
-	Funcionalidade: Simulação de Emprestimo
-		Cenario: Cliente com score suficiente e renda adequada
-			Dado um cliente com score 500 e renda mensal 3000
-			E deseja um emprestimo de 10000
-			Quando ele solicita um empréstimo
-			Então a situação deve ser "APROVADO"
-			E o valor da parcela mensal deve ser exibido
+Funcionalidade: Simulação de Emprestimo
+
+  Esquema do Cenario: Solicitações de emprestimo
+    Dado um cliente com score <score> e renda mensal <renda>
+    E deseja um empréstimo de <emprestimo>
+    Quando ele solicita um empréstimo
+    Então a situação deve ser "<situacao>"
+    E o valor da parcela mensal deve ser exibido
+
+    Exemplos:
+      | score | renda | emprestimo | situacao  |
+      | 500   | 3000  | 10000      | APROVADO  |
+      | 200   | 3000  | 10000      | REPROVADO |
+      | 300   | 3000  | 100000     | REPROVADO |

@@ -72,9 +72,9 @@ public class EmprestimoServiceTest {
     	
     	EmprestimoResponseDTO response = emprestimoService.simularEmprestimo(request);
     	
-    	assertEquals("REPROVADOO", response.getSituacao());
+    	assertEquals("REPROVADO", response.getSituacao());
     	assertEquals("Valor solicitado execede o limite permitido.", response.getMotivo());
-    	assertEquals(0.0, response.getValorAprovado());
+    	assertEquals(null, response.getValorAprovado());
     }
     
     
@@ -92,8 +92,8 @@ public class EmprestimoServiceTest {
     	EmprestimoResponseDTO response = emprestimoService.simularEmprestimo(request);
     	
     	assertEquals("REPROVADO", response.getSituacao());
-    	assertEquals("Seu score está abaixo do minimo necessário para solicitar um empréstimo.", response.getMotivo());
-    	assertEquals(0.0, response.getValorAprovado());
+    	assertEquals("Seu score está abaixo do mínimo necessário para solicitar um empréstimo.", response.getMotivo());
+    	assertEquals(null, response.getValorAprovado());
     	
     }
 }
