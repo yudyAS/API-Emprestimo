@@ -154,6 +154,7 @@ Essa abordagem facilita a comunicação entre desenvolvedores, analistas e stake
 
 ### Exemplo de cenário em Gherkin:
 
+![Image](https://github.com/user-attachments/assets/b4d0ed25-d4ca-48a9-81a6-617ba56f5f25)
 
 
 ---
