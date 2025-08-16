@@ -145,14 +145,23 @@ A API utiliza um modelo relacional para armazenar os dados:
 | quantidadeMaximaParcelas | Integer | Número máximo de parcelas      |
 | valorParcelaMensal   | Double | Valor estimado da parcela mensal   |
 | cliente_id           | Long   | Referência ao cliente associado   |
+---
+## Testes Automatizados com Cucumber e Gherkin
 
+Foi implementado um teste integrado utilizando Cucumber e a linguagem Gherkin, que permite a escrita de cenários de teste em uma linguagem ubíqua, compreensível tanto pela área técnica quanto pela área de negócio.
+
+Essa abordagem facilita a comunicação entre desenvolvedores, analistas e stakeholders, garantindo que todos tenham um entendimento claro do comportamento esperado da aplicação. Com isso, é possível simular, validar e garantir o correto funcionamento da API de empréstimos com base nas regras de negócio definidas.
+
+### Exemplo de cenário em Gherkin:
+
+![Image](https://github.com/user-attachments/assets/b4d0ed25-d4ca-48a9-81a6-617ba56f5f25)
 
 
 ---
 
 ## Melhorias Futuras
 - Implementar autenticação (JWT)
-- Adicionar testes unitários com JUnit e Mockito
+- Adicionar testes unitários com JUnit e Mockito✅
 - Criar endpoint para listar todos os empréstimos de um cliente
 - Adicionar novas regras para taxas de juros variáveis
 
