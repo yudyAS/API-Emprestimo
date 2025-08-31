@@ -25,7 +25,7 @@ public class EmprestimoService {
 	
 	public EmprestimoResponseDTO simularEmprestimo(EmprestimoRequestDTO request) {
 
-		logger.info("Iniciando simulação de empréstimo para cliente: {}", request.getNomeCompleto());
+		logger.debug("Iniciando simulação de empréstimo para cliente: {}", request.getNomeCompleto());
 		
 		Cliente cliente = new Cliente();
 		cliente.setNomeCompleto(request.getNomeCompleto());
@@ -33,7 +33,7 @@ public class EmprestimoService {
 		cliente.setScore(request.getScore());
 
 		cliente = clienteRepository.save(cliente);
-		logger.info("Cliente salvo com sucesso Nome: {}", cliente.getNomeCompleto());
+		logger.debug("Cliente salvo com sucesso Nome: {}", cliente.getNomeCompleto());
 		
 		Emprestimo emprestimo = new Emprestimo();
 		emprestimo.setValorClienteSolicitado(request.getValorCreditoSolicitado());
